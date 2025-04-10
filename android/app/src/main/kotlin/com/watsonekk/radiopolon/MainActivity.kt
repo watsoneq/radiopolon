@@ -1,0 +1,5 @@
+package com.watsonekk.radiopolon
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
