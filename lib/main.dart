@@ -53,7 +53,7 @@ class _RadioPlayerState extends State<RadioPlayer> {
     final redAccent = Color(0xFFFF3B30);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Radio Stream')),
+      appBar: AppBar(title: Text('Radio Polon')),
       body: Center(
         child: StreamBuilder<PlayerState>(
           stream: _player.playerStateStream,
