@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Radio Polon',
+      title: 'Radio App',
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: Colors.black,
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         iconTheme: IconThemeData(color: redAccent),
       ),
-      home: RadioPolon(),
+      home: RadioPlayer(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -53,7 +53,7 @@ class _RadioPlayerState extends State<RadioPlayer> {
     final redAccent = Color(0xFFFF3B30);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Radio Polon')),
+      appBar: AppBar(title: Text('Radio Stream')),
       body: Center(
         child: StreamBuilder<PlayerState>(
           stream: _player.playerStateStream,
@@ -62,8 +62,7 @@ class _RadioPlayerState extends State<RadioPlayer> {
             final playing = playerState?.playing ?? false;
             final processing = playerState?.processingState;
 
-            if (processing == ProcessingState.loading ||
-                processing == ProcessingState.buffering) {
+            if (processing == ProcessingState.loading || processing == ProcessingState.buffering) {
               return CircularProgressIndicator(color: redAccent);
             } else if (!playing) {
               return IconButton(
@@ -86,3 +85,4 @@ class _RadioPlayerState extends State<RadioPlayer> {
     );
   }
 }
+
